@@ -7,12 +7,15 @@ class CoordinateCompressor:
     y: list[int]
 
     def __init__(self, points: list[Point]):
-        self.x = []
-        self.y = []
+        x = set()
+        y = set()
 
         for point in points:
-            self.x.append(point.x)
-            self.y.append(point.y)
+            x.add(point.x)
+            y.add(point.y)
+            
+        self.x = list(x)
+        self.y = list(y)
         self.x.sort()
         self.y.sort()
 
